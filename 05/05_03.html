@@ -16,7 +16,8 @@
     <div class="box" onclick="reset()">    </div>
     <button onclick="paintItBlack()">Покрасить в черный</button>
     <button onclick="makeCircle()">Сделать круглым</button>
-    <button onclick="moveRight()">Подвинуть вправо</button>      <button onclick="makeCrazzy()">Сделать мигающим</button>
+    <button onclick="moveRight()">Подвинуть вправо</button>
+    <button onclick="makeCrazzy()">Сделать мигающим</button>
     <input type="text" placeholder="Напишите название цвета на английском или в виде HEX-кода" size="70">
     <button onclick="addText()">Добавить надпись</button>
     <script>
@@ -27,6 +28,17 @@
       function reset() {
         window.location.reload()
       }
+      function makeCircle() {
+        box.style.Radius = '50px'
+      }
+      function moveRight() {
+        box.style.marginLeft = '500px'
+      }
+      function makeCrazzy() {
+
+        box.style.animation = ''
+      }
+      
 
     </script>
 
