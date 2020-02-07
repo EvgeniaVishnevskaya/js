@@ -1,7 +1,7 @@
 // Координаты палуб корабля
-let location1 = 5
-let location2 = 6
-let location3 = 7
+let location1 = Math.floor(Math.random() * 7)
+let location2 = location1 + 1
+let location3 = location2 + 1
 // Координата выстрела
 let currentShot
 // Сколько сделано выстрелов
