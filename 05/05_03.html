@@ -10,6 +10,11 @@
         background-color: red;
         transition: all 400ms ease;
       }
+      @keyframes crazzy {
+        50% {
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -18,8 +23,15 @@
     <button onclick="makeCircle()">Сделать круглым</button>
     <button onclick="moveRight()">Подвинуть вправо</button>
     <button onclick="makeCrazzy()">Сделать мигающим</button>
-    <input type="text" placeholder="Напишите название цвета на английском или в виде HEX-кода" size="70">
+    <input id="labelInput" type="text"
+    placeholder="Напишите любое слово" size="70">
+
+    <input id="bgColorInput" type="text"
+    placeholder="Напишите название цвета на английском или в виде HEX-кода" size="70">
+
     <button onclick="addText()">Добавить надпись</button>
+    <button onclick="changeBgColor()">
+    Поменять цвет</button>
     <script>
       let box = document.querySelector('.box')
       function paintItBlack() {
@@ -29,16 +41,31 @@
         window.location.reload()
       }
       function makeCircle() {
-        box.style.Radius = '50px'
+        box.style.borderRadius = '100%'
       }
       function moveRight() {
-        box.style.marginLeft = '500px'
+        box.style.transform = 'translateX(300px)'
       }
       function makeCrazzy() {
-
-        box.style.animation = ''
+        box.style.animation = 'crazzy 1s linear infinite'
       }
-      
+      function addText() {
+        let labelInputValue =
+        document.getElementById("labelInputValue")
+        box.innerText = labelInput.value
+        labelInput.value = ""
+
+      }
+      function changeBgColor() {
+        let bgColorInput =
+          document.querySelector("#bgColorInput")
+          console.log(123);
+        box.style.backgroundColor = bgColorInput.value
+        bgColorInput.value = ""
+
+
+      }
+
 
     </script>
 
